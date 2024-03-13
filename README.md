@@ -8,7 +8,7 @@ This project facilitates the deployment of a 2-tier Flask application using Dock
 
 ## Dockerfile
 
-## Base Image
+### Base Image
 
 ```Dockerfile
 FROM ubuntu:latest
@@ -42,7 +42,7 @@ CMD ["--port", "$HTTP_PORT"]
 
 #### Flask App
 
-```bash
+```yaml
 version: '3'
 services:
   web:
@@ -57,7 +57,7 @@ services:
 
 #### Database
 
-```bash
+```yaml
   db:
     image: mysql:5.7
     environment:
@@ -70,7 +70,7 @@ services:
 
 ### Networks
 
-```bash
+```yaml
 networks:
   mynetwork:
     driver: bridge
