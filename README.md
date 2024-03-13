@@ -1,5 +1,3 @@
----
-
 # Docker 2-Tier Flask App Deployment
 
 ## Introduction
@@ -44,15 +42,15 @@ CMD ["--port", "$HTTP_PORT"]
 
 ```yaml
 version: '3'
-services:
+services:  # Indentation added
   web:
     build: .
-    ports:
-      - "5000:5000"
-    volumes:
-      - ./app:/app
-    networks:
-      - mynetwork
+    # ... rest of the configuration
+
+  db:
+    image: mysql:5.7
+    # ... rest of the configuration
+
 ```
 
 #### Database
@@ -138,7 +136,3 @@ Leverage Docker Scout for DevSecOps and continuous integration.
 ## Docker Compose
 
 Use Docker Compose to simplify multi-container deployments.
-
----
-
-Feel free to further customize this README file based on the specific details of your project, including additional information about your Flask app, database schema, and any other configurations necessary for your deployment.
