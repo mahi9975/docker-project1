@@ -42,7 +42,7 @@ CMD ["--port", "$HTTP_PORT"]
 
 #### Flask App
 
-```yaml
+```bash
 version: '3'
 services:
   web:
@@ -70,7 +70,7 @@ services:
 
 ### Networks
 
-```yaml
+```bash
 networks:
   mynetwork:
     driver: bridge
