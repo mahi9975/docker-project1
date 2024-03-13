@@ -8,6 +8,7 @@ This project facilitates the deployment of a 2-tier Flask application using Dock
 
 ## Dockerfile
 
+
 ### Base Image
 
 ```Dockerfile
