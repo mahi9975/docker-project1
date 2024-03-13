@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Flask App</title>
+    <style>
+        body, h1, p, form, input {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            transition: background-color 0.5s ease;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #ff7e5f;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            transition: color 0.5s ease;
+        }
+
+        p {
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            border: 2px solid #ff7e5f;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:hover, input[type="text"]:focus {
+            border-color: #ff4c2c;
+        }
+
+        input[type="submit"] {
+            padding: 12px 18px;
+            background-color: #ff4c2c;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff7e5f;
+            transform: translateY(-2px);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px 10px;
+            }
+
+            input[type="text"] {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hey Friend, 
+            Let's make this Flask App!</h1>
+        {% for message in messages %}
+            <p>{{ message[0] }}</p>
+        {% endfor %}
+
+        <form action="/submit" method="post">
+            <input type="text" name="new_message" placeholder="Enter a new message">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        // Adding dynamic background color change
+        const container = document.querySelector('.container');
+        container.addEventListener('mouseenter', () => {
+            document.body.style.backgroundColor = '#e6f7ff';
+        });
+
+        container.addEventListener('mouseleave', () => {
+            document.body.style.backgroundColor = '#f8f8f8';
+        });
+
+        // Adding smooth scrolling effect
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
+
