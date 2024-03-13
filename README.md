@@ -57,7 +57,7 @@ services:
 
 #### Database
 
-```yaml
+```bash
   db:
     image: mysql:5.7
     environment:
